@@ -1,0 +1,130 @@
+.maintenance-page {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  overflow: hidden;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(241, 93, 42, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 85%, rgba(93, 186, 247, 0.12), transparent 32%),
+    var(--ink-950);
+  color: #fff;
+}
+
+.maintenance-page__glow {
+  position: absolute;
+  width: min(70vw, 680px);
+  height: min(70vw, 680px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 34px rgba(255, 255, 255, 0.025),
+    0 0 0 68px rgba(255, 255, 255, 0.018);
+}
+
+.maintenance-card {
+  position: relative;
+  width: min(100%, 560px);
+  padding: clamp(40px, 8vw, 72px) clamp(24px, 8vw, 64px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-lg);
+  background: rgba(9, 28, 43, 0.72);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.maintenance-card__mark {
+  display: grid;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 28px;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--accent);
+  box-shadow: 0 14px 34px rgba(241, 93, 42, 0.28);
+}
+
+.maintenance-card__mark svg {
+  width: 42px;
+  fill: #fff;
+}
+
+.maintenance-card__mark .maintenance-card__drop {
+  fill: #ffd9ca;
+}
+
+.maintenance-card__eyebrow {
+  margin-bottom: 14px;
+  color: #ff9d7b;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.maintenance-card h1 {
+  margin-bottom: 16px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1;
+}
+
+.maintenance-card__message {
+  max-width: 410px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.05rem;
+}
+
+.maintenance-loader {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 34px 0 18px;
+}
+
+.maintenance-loader span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: maintenance-bounce 1.2s infinite ease-in-out;
+}
+
+.maintenance-loader span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.maintenance-loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.maintenance-card__note {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.9rem;
+}
+
+@keyframes maintenance-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  30% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maintenance-loader span {
+    animation: none;
+    opacity: 1;
+  }
+}

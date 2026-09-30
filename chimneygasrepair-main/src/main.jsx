@@ -1,8 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
-import { ErrorBoundary } from './app/ErrorBoundary';
-import { router } from './app/router';
+import { MaintenancePage } from './pages/MaintenancePage';
 import './styles/index.css';
 
 const rootElement = document.getElementById('root');
@@ -13,8 +11,6 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <ErrorBoundary>
-      <RouterProvider router={router} />
-    </ErrorBoundary>
+    <MaintenancePage />
   </StrictMode>,
 );
